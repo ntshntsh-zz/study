@@ -11,4 +11,17 @@
 
     <artifactId>calc-tests</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>ru.ntsh</groupId>
+            <artifactId>calc-client</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
