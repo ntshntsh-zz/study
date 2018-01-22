@@ -1,4 +1,4 @@
-package ru.auto.ntsh.study.calc;
+package ru.ntsh.study.calc;
 
 public class Calculator {
 

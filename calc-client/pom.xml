@@ -5,7 +5,7 @@
 
     <parent>
         <artifactId>study</artifactId>
-        <groupId>ru.auto.ntsh</groupId>
+        <groupId>ru.ntsh</groupId>
         <version>0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
