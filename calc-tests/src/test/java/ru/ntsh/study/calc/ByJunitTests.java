@@ -3,13 +3,11 @@ package ru.ntsh.study.calc;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static ru.ntsh.study.calc.testdata.CalcTestsData.*;
 
 public class ByJunitTests {
 
     private static Calculator CALC = new Calculator();
-    private static float FIRST_VALUE = 5;
-    private static float SECOND_VALUE = 0.01F;
-
 
     @Test
     public void shouldSum() {
