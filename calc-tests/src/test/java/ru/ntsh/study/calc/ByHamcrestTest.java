@@ -14,7 +14,7 @@ public class ByHamcrestTest {
     public void shouldSum() {
         assertThat("Результат сложения отличается от ожидаемого!",
                 CALC.getSum(FIRST_VALUE, SECOND_VALUE),
-                equalTo(FIRST_VALUE/SECOND_VALUE));
+                equalTo(FIRST_VALUE + SECOND_VALUE));
     }
     @Test
     public void shouldDiv() {
