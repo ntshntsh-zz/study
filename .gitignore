@@ -6,3 +6,9 @@
 
 # Maven files
 target
+
+# Properties
+*.properties
+
+#mac files
+.DS_Store
