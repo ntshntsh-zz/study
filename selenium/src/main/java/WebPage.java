@@ -3,8 +3,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.safari.SafariDriver;
 
-import java.util.List;
-
 public class WebPage {
 
     private static WebDriver driver;
@@ -14,7 +12,11 @@ public class WebPage {
         driver.get(url);
     }
 
-    public void inputText (String fieldXpath, String message) {
+    protected WebDriver getDriver() {
+        return driver;
+    }
+
+    public void inputText(String fieldXpath, String message) {
 
         WebElement textInput = driver.findElement(By.xpath(fieldXpath));
         textInput.click();
