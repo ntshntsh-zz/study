@@ -3,7 +3,8 @@ package ru.ntsh.study.calc;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static ru.ntsh.study.calc.testdata.CalcTestsData.*;
+import static ru.ntsh.study.calc.testdata.CalcTestsData.FIRST_VALUE;
+import static ru.ntsh.study.calc.testdata.CalcTestsData.SECOND_VALUE;
 
 public class ByJunitTests {
 

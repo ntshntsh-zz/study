@@ -3,7 +3,8 @@ package ru.ntsh.study.calc;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static ru.ntsh.study.calc.testdata.CalcTestsData.*;
+import static ru.ntsh.study.calc.testdata.CalcTestsData.FIRST_VALUE;
+import static ru.ntsh.study.calc.testdata.CalcTestsData.SECOND_VALUE;
 
 public class ByAssertJTest {
 
