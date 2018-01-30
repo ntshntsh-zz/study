@@ -25,6 +25,11 @@ public class WebPage {
 
     }
 
+    public void btnClick(String btnXpath) {
+        WebElement btn = driver.findElement(By.xpath(btnXpath));
+        btn.click();
+    }
+
     public void quit() {
         driver.quit();
     }
