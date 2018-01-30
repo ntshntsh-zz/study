@@ -1,6 +1,7 @@
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 import java.util.Random;
@@ -10,14 +11,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class VkMsgTest {
 
+    @Rule
+    public RepeatRule repeatRule = new RepeatRule();
+
     private VkUserPage vk;
     private SeleniumConfig cfg = ConfigFactory.create(SeleniumConfig.class);
 
     @Before
     public void init() {
-
         vk = new VkUserPage(cfg.urlVk() + cfg.vkReciever());
-
     }
 
     @After
@@ -26,6 +28,7 @@ public class VkMsgTest {
     }
 
     @Test
+    @Repeat(10)
     public void shouldSendMessageToUser() {
 
         String alphabet = "Artem Eroshenko";
@@ -40,7 +43,5 @@ public class VkMsgTest {
         vk.openMsgPopup().goToDialog();
 
         assertThat(vk.getLatestMessages()).contains(randomMessage);
-
     }
-
 }
