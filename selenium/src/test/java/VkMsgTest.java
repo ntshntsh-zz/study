@@ -19,7 +19,7 @@ public class VkMsgTest {
 
     @Before
     public void init() {
-        vk = new VkUserPage(cfg.urlVk() + cfg.vkReciever());
+        vk = new VkUserPage(cfg.vkUrl() + cfg.vkReciever());
     }
 
     @After

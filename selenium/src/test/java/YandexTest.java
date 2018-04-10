@@ -15,7 +15,7 @@ public class YandexTest {
 
     @Before
     public void init() {
-        yandex = new YandexSERP(ConfigFactory.create(SeleniumConfig.class).urlYandex());
+        yandex = new YandexSERP(ConfigFactory.create(SeleniumConfig.class).yandexUrl());
 
     }
 
