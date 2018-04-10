@@ -31,7 +31,7 @@ public class VkMsgTest {
     @Repeat(10)
     public void shouldSendMessageToUser() {
 
-        String alphabet = "Artem Eroshenko";
+        String alphabet = "ArtemEroshenko";
 
         String randomMessage = new Random()
                 .ints(10, 0, alphabet.length())

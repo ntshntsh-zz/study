@@ -20,6 +20,7 @@ public class VkUserPage extends WebPage {
     private final static String POPUP_SEND_BUTTON = "//button[@id='mail_box_send']";
     private final static String SUCCESS_BALOON = "//div[@class='top_result_baloon']";
     private final static String MESSAGE = "//div[@class='im-mess--text wall_module _im_log_body']";
+    private final static String QUICK_EXPIRE_CHECKBOX = "//div[@id='quick_expire']";
 
     private final Wait<WebDriver> wait = new WebDriverWait(getDriver(), 10, 1000)
             .withMessage("Элемент не найден");
@@ -31,8 +32,9 @@ public class VkUserPage extends WebPage {
     public void quickLogin(String login, String password) {
 
         //необходимо отключить в настройках подтверждение входа!
-        inputText(LOGIN_INPUT, login);
         inputText(PASSWORD_INPUT, password);
+        inputText(LOGIN_INPUT, login);
+        btnClick(QUICK_EXPIRE_CHECKBOX);
         btnClick(LOGIN_BUTTON);
 
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(MY_PAGE_MENU_ITEM)));
