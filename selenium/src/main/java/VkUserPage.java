@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class VkUserPage extends WebPage {
 
-    private final static String LOGIN_INPUT = "//div[@id='quick_email']";
+    private final static String LOGIN_INPUT = "//input[@id='quick_email']";
     private final static String PASSWORD_INPUT = "//input[@id='quick_pass']";
     private final static String LOGIN_BUTTON = "//button[@id='quick_login_button']";
     private final static String MY_PAGE_MENU_ITEM = "//li[@id='l_pr']";
@@ -21,7 +21,7 @@ public class VkUserPage extends WebPage {
     private final static String SUCCESS_BALOON = "//div[@class='top_result_baloon']";
     private final static String MESSAGE = "//div[@class='im-mess--text wall_module _im_log_body']";
 
-    private final Wait<WebDriver> wait = new WebDriverWait(getDriver(), 5, 1000)
+    private final Wait<WebDriver> wait = new WebDriverWait(getDriver(), 10, 1000)
             .withMessage("Элемент не найден");
 
     public VkUserPage(String urlUserPage) {

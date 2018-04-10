@@ -1,7 +1,6 @@
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.Sources;
 
-@Sources({"classpath:"})
 public interface SeleniumConfig extends Config {
     @Key("yandex.url")
     String yandexUrl();
