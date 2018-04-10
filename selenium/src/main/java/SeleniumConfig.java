@@ -1,11 +1,12 @@
 import org.aeonbits.owner.Config;
+import org.aeonbits.owner.Config.Sources;
 
 public interface SeleniumConfig extends Config {
-    @Key("url.yandex")
-    String urlYandex();
+    @Key("yandex.url")
+    String yandexUrl();
 
-    @Key("url.vk")
-    String urlVk();
+    @Key("vk.url")
+    String vkUrl();
 
     @Key("vk.reciever")
     String vkReciever();

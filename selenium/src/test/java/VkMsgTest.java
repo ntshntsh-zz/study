@@ -15,11 +15,11 @@ public class VkMsgTest {
     public RepeatRule repeatRule = new RepeatRule();
 
     private VkUserPage vk;
-    private SeleniumConfig cfg = ConfigFactory.create(SeleniumConfig.class);
+    private SeleniumConfig config = ConfigFactory.create(SeleniumConfig.class);
 
     @Before
     public void init() {
-        vk = new VkUserPage(cfg.urlVk() + cfg.vkReciever());
+        vk = new VkUserPage(config.vkUrl() + config.vkReciever());
     }
 
     @After
@@ -31,14 +31,14 @@ public class VkMsgTest {
     @Repeat(10)
     public void shouldSendMessageToUser() {
 
-        String alphabet = "Artem Eroshenko";
+        String alphabet = "ArtemEroshenko";
 
         String randomMessage = new Random()
                 .ints(10, 0, alphabet.length())
                 .mapToObj(i -> String.valueOf(alphabet.charAt(i)))
                 .collect(Collectors.joining());
 
-        vk.quickLogin(cfg.vkSenderLogin(), cfg.vkSenderPassword());
+        vk.quickLogin(config.vkSenderLogin(), config.vkSenderPassword());
         vk.openMsgPopup().sendMsg(randomMessage);
         vk.openMsgPopup().goToDialog();
 
