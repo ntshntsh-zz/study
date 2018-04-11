@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class YandexTest {
 
-    private static String SEARCH_TEXT = "артем ерошенко";
+    private static final String SEARCH_TEXT = "артем ерошенко";
 
     private YandexSERPage yandex;
 
@@ -32,7 +32,7 @@ public class YandexTest {
         yandex.textSearch(SEARCH_TEXT);
 
         assertThat(yandex.getSerpElementsHighlightedText())
-                .containsOnly("Артем", "Ерошенко", "Artem", "Eroshenko");
+                .containsOnly("Артем", "Ерошенко", "Artem", "Eroshenko", "Артём");
 
     }
 
