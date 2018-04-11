@@ -1,9 +1,16 @@
 package steps;
 
 import io.qameta.htmlelements.WebPageFactory;
+import io.qameta.htmlelements.element.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import pages.VkSomeUserPage;
+
+import static io.qameta.htmlelements.matcher.DisplayedMatcher.displayed;
+import static org.hamcrest.CoreMatchers.not;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class SendMessageSteps {
 
@@ -41,6 +48,21 @@ public class SendMessageSteps {
         onVkSomeUserPage().quickDialog().messageInput().sendKeys(message);
         onVkSomeUserPage().quickDialog().sendButton().click();
     }
+
+    public void goToFullDialog(){
+        onVkSomeUserPage().quickDialog().fullDialogLink().click();
+    }
+
+    public List<String> getLatestMessages() {
+
+        onVkSomeUserPage().messages().get(1).waitUntil(displayed());
+
+        List<ExtendedWebElement> latestMessages = onVkSomeUserPage().messages();
+
+        return latestMessages.stream().map(ExtendedWebElement::getText).collect(Collectors.toList());
+    }
+
+
 
     public void quit() {
         driver.quit();

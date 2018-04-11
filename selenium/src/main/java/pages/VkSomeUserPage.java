@@ -6,6 +6,8 @@ import io.qameta.htmlelements.WebPage;
 import io.qameta.htmlelements.annotation.FindBy;
 import io.qameta.htmlelements.element.ExtendedWebElement;
 
+import java.util.List;
+
 public interface VkSomeUserPage extends WebPage{
 
     @FindBy("//div[@id='quick_login']")
@@ -17,10 +19,7 @@ public interface VkSomeUserPage extends WebPage{
     @FindBy("//button[@class='flat_button profile_btn_cut_left']")
     ExtendedWebElement sendMessageButton();
 
-    @FindBy("//div[@class='top_result_baloon']")
-    ExtendedWebElement successBaloon();
-
     @FindBy("//div[@class='im-mess--text wall_module _im_log_body']")
-    ExtendedWebElement singleMessage();
+    List<ExtendedWebElement> messages();
 
 }

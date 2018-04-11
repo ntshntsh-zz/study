@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import pages.VkUserPage;
+import pages.OldVkUserPage;
 import rules.Repeat;
 import rules.RepeatRule;
 
@@ -13,17 +13,17 @@ import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class VkMsgTest {
+public class OldVkMsgTest {
 
     @Rule
     public RepeatRule repeatRule = new RepeatRule();
 
-    private VkUserPage vk;
+    private OldVkUserPage vk;
     private SeleniumConfig config = ConfigFactory.create(SeleniumConfig.class);
 
     @Before
     public void init() {
-        vk = new VkUserPage(config.vkUrl() + config.vkReciever());
+        vk = new OldVkUserPage(config.vkUrl() + config.vkReciever());
     }
 
     @After

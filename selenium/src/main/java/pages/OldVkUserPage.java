@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class VkUserPage extends WebPage {
+public class OldVkUserPage extends OldWebPage {
 
     private final static String LOGIN_INPUT = "//input[@id='quick_email']";
     private final static String PASSWORD_INPUT = "//input[@id='quick_pass']";
@@ -27,7 +27,7 @@ public class VkUserPage extends WebPage {
     private final Wait<WebDriver> wait = new WebDriverWait(getDriver(), 10, 1000)
             .withMessage("Элемент не найден");
 
-    public VkUserPage(String urlUserPage) {
+    public OldVkUserPage(String urlUserPage) {
         super(urlUserPage);
     }
 
@@ -43,7 +43,7 @@ public class VkUserPage extends WebPage {
 
     }
 
-    public VkUserPage openMsgPopup() {
+    public OldVkUserPage openMsgPopup() {
         btnClick(SEND_MSG_BUTTON);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(POPUP_MSG_INPUT)));
         return this;
