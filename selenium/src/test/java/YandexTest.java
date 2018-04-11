@@ -1,7 +1,9 @@
+import config.SeleniumConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import pages.YandexSERPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -10,12 +12,12 @@ public class YandexTest {
 
     private static String SEARCH_TEXT = "артем ерошенко";
 
-    private YandexSERP yandex;
+    private YandexSERPage yandex;
 
 
     @Before
     public void init() {
-        yandex = new YandexSERP(ConfigFactory.create(SeleniumConfig.class).yandexUrl());
+        yandex = new YandexSERPage(ConfigFactory.create(SeleniumConfig.class).yandexUrl());
 
     }
 
