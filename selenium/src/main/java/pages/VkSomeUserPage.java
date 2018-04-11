@@ -8,7 +8,7 @@ import io.qameta.htmlelements.element.ExtendedWebElement;
 
 import java.util.List;
 
-public interface VkSomeUserPage extends WebPage{
+public interface VkSomeUserPage extends WebPage {
 
     @FindBy("//div[@id='quick_login']")
     QuickLoginForm quickLogin();

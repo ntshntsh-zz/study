@@ -3,7 +3,7 @@ package elements;
 import io.qameta.htmlelements.annotation.FindBy;
 import io.qameta.htmlelements.element.ExtendedWebElement;
 
-public interface DialogPopup extends ExtendedWebElement{
+public interface DialogPopup extends ExtendedWebElement {
 
     @FindBy("//div[@id='mail_box_editable']")
     ExtendedWebElement messageInput();
