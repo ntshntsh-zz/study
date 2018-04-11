@@ -1,8 +1,12 @@
+import config.SeleniumConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import pages.VkUserPage;
+import rules.Repeat;
+import rules.RepeatRule;
 
 import java.util.Random;
 import java.util.stream.Collectors;

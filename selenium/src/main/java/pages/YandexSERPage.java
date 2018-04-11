@@ -1,3 +1,5 @@
+package pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,13 +10,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class YandexSERP extends WebPage {
+public class YandexSERPage extends WebPage {
 
-    private static String SERP_ITEM = "//*[@class=\"serp-item\"]";
-    private static String HIGHLITED_TEXT = "//*[@class=\"needsclick\"]";
-    private static String SEARCH_ARROW = "//*[@id=\"text\"]";
+    private static final String SERP_ITEM = "//*[@class=\"serp-item\"]";
+    private static final String HIGHLITED_TEXT = "//*[@class=\"needsclick\"]";
+    private static final String SEARCH_ARROW = "//*[@id=\"text\"]";
 
-    public YandexSERP(String url) {
+    public YandexSERPage(String url) {
         super(url);
     }
 
