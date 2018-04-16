@@ -1,5 +1,6 @@
 package module;
 
+import adaptor.PetApiAdaptor;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Scope;
@@ -15,6 +16,7 @@ public class PetApiModule extends AbstractModule {
 
     @Override
     protected void configure() {
+        install(new PetApiAdaptor());
         bind(ApiClient.class).toProvider(PetApiProvider.class).in(SINGLETON);
     }
 
