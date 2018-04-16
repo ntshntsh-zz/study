@@ -30,6 +30,9 @@
         <gsonfire.version>1.8.2</gsonfire.version>
         <swagger.anno.version>1.5.15</swagger.anno.version>
         <restassured.version>3.0.6</restassured.version>
+        <javax.inject.version>1</javax.inject.version>
+        <guice.version>4.2.0</guice.version>
+        <guice.junit.runner.version>1.1</guice.junit.runner.version>
     </properties>
 
     <dependencyManagement>
@@ -74,7 +77,21 @@
                 <artifactId>rest-assured</artifactId>
                 <version>${restassured.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>${javax.inject.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.carlosbecker</groupId>
+                <artifactId>guice-junit-test-runner</artifactId>
+                <version>${guice.junit.runner.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
