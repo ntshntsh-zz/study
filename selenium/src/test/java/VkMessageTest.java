@@ -4,31 +4,31 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import pages.VkUserPage;
 import rules.Repeat;
 import rules.RepeatRule;
+import steps.SendMessageSteps;
 
 import java.util.Random;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class VkMsgTest {
+public class VkMessageTest {
 
     @Rule
     public RepeatRule repeatRule = new RepeatRule();
 
-    private VkUserPage vk;
+    private SendMessageSteps sendMessageSteps;
     private SeleniumConfig config = ConfigFactory.create(SeleniumConfig.class);
 
     @Before
     public void init() {
-        vk = new VkUserPage(config.vkUrl() + config.vkReciever());
+        sendMessageSteps = new SendMessageSteps(config.vkUrl() + config.vkReciever());
     }
 
     @After
     public void quit() {
-        vk.quit();
+        sendMessageSteps.quit();
     }
 
     @Test
@@ -42,10 +42,13 @@ public class VkMsgTest {
                 .mapToObj(i -> String.valueOf(alphabet.charAt(i)))
                 .collect(Collectors.joining());
 
-        vk.quickLogin(config.vkSenderLogin(), config.vkSenderPassword());
-        vk.openMsgPopup().sendMsg(randomMessage);
-        vk.openMsgPopup().goToDialog();
+        sendMessageSteps.quickLogin(config.vkSenderLogin(), config.vkSenderPassword());
+        sendMessageSteps.openQuickDialog()
+                .sendQuickMessage(randomMessage);
+        sendMessageSteps.openQuickDialog()
+                .goToFullDialog();
 
-        assertThat(vk.getLatestMessages()).contains(randomMessage);
+        assertThat(sendMessageSteps.getLatestMessages()).contains(randomMessage);
+
     }
 }

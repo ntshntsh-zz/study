@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class YandexSERPage extends WebPage {
+public class YandexSERPage extends OldWebPage {
 
     private static final String SERP_ITEM = "//*[@class=\"serp-item\"]";
     private static final String HIGHLITED_TEXT = "//*[@class=\"needsclick\"]";

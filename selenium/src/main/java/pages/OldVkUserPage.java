@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class VkUserPage extends WebPage {
+public class OldVkUserPage extends OldWebPage {
 
     private final static String LOGIN_INPUT = "//input[@id='quick_email']";
     private final static String PASSWORD_INPUT = "//input[@id='quick_pass']";
@@ -22,12 +22,12 @@ public class VkUserPage extends WebPage {
     private final static String POPUP_SEND_BUTTON = "//button[@id='mail_box_send']";
     private final static String SUCCESS_BALOON = "//div[@class='top_result_baloon']";
     private final static String MESSAGE = "//div[@class='im-mess--text wall_module _im_log_body']";
-    private final static String QUICK_EXPIRE_CHECKBOX = "//div[@id='quick_expire']";
+    private final static String QUICK_EXPIRE_CHECKBOX = "//div[@id='quick_expire']"; //+
 
     private final Wait<WebDriver> wait = new WebDriverWait(getDriver(), 10, 1000)
             .withMessage("Элемент не найден");
 
-    public VkUserPage(String urlUserPage) {
+    public OldVkUserPage(String urlUserPage) {
         super(urlUserPage);
     }
 
@@ -43,7 +43,7 @@ public class VkUserPage extends WebPage {
 
     }
 
-    public VkUserPage openMsgPopup() {
+    public OldVkUserPage openMsgPopup() {
         btnClick(SEND_MSG_BUTTON);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(POPUP_MSG_INPUT)));
         return this;

@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.safari.SafariDriver;
 
-public class WebPage {
+public class OldWebPage {
 
     private static WebDriver driver;
 
-    public WebPage(String url) {
+    public OldWebPage(String url) {
         driver = new SafariDriver();
         driver.get(url);
     }
